@@ -50,7 +50,7 @@ const BLPFile = ((Bufo) => {
 		 * @param {*} data Anything supported by Bufo.
 		 */
 		constructor(data) {
-			this.data = new Bufo(data);
+			this.data = data instanceof Bufo ? data : new Bufo(data);
 
 			// Check magic value..
 			if (this.data.readUInt32() !== 0x32504c42)
