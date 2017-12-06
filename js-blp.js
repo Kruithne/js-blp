@@ -290,6 +290,7 @@ const BLPFile = ((Bufo) => {
 				let colour = this.palette[this.rawData[i]];
 				buf.writeUInt8([colour[2], colour[1], colour[0], this._getAlpha(i)]);
 			}
+			buf.seek(0);
 			return buf;
 		}
 
@@ -332,6 +333,7 @@ const BLPFile = ((Bufo) => {
 					data[ofs + 2], data[ofs + 1], data[ofs], data[ofs + 3]
 				]);
 			}
+			buf.seek(0);
 			return buf;
 		}
 	}
