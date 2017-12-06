@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/Kruithne/js-blp/issues"
   },
-  "homepage": "https://github.com/Kruithne/js-blp#readme"
+  "homepage": "https://github.com/Kruithne/js-blp#readme",
+  "dependencies": {
+    "bufo": "^1.1.1"
+  }
 }
