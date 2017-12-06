@@ -1,6 +1,6 @@
 {
   "name": "js-blp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "BLP (Blizzard Texture File) Reader",
   "main": "js-blp.js",
   "scripts": {
