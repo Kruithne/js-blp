@@ -152,11 +152,11 @@ const BLPFile = ((Bufo) => {
 		 */
 		_getCompressed() {
 			let flags = this.alphaDepth > 1 ? (this.alphaEncoding === 7 ? BLPFile.DXT5 : BLPFile.DXT3) : BLPFile.DXT1;
-			let data = [];
+			let data = new Array(this.scaledWidth * this.scaledHeight * 4);
 
 			let pos = 0;
 			let blockBytes = (flags & BLPFile.DXT1) !== 0 ? 8 : 16;
-			let target = [];
+			let target = new Array(4 * 16);
 
 			for (let y = 0; y < this.scaledHeight; y += 4) {
 				for (let x = 0; x < this.scaledWidth; x+= 4) {
