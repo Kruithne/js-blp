@@ -125,7 +125,7 @@ const BLPFile = ((Bufo) => {
 					break;
 
 				case 3:
-					out = BLPFile._marshalBGRA(this.rawData);
+					out = this._marshalBGRA();
 					break;
 			}
 
@@ -347,26 +347,26 @@ const BLPFile = ((Bufo) => {
 		 * @returns {Bufo}
 		 * @private
 		 */
-		static _marshalBGRA(data) {
+		_marshalBGRA() {
 			if (this.imageData) {
 				let out = this.imageData.data;
-				let count = data.length / 4;
+				let count = this.rawData.length / 4;
 				for (let i = 0; i < count; i++) {
 					let ofs = i * 4;
-					out[ofs] = data[ofs + 2];
-					out[ofs + 1] = data[ofs + 1];
-					out[ofs + 2] = data[ofs];
-					out[ofs + 3] = data[ofs + 3];
+					out[ofs] = this.rawData[ofs + 2];
+					out[ofs + 1] = this.rawData[ofs + 1];
+					out[ofs + 2] = this.rawData[ofs];
+					out[ofs + 3] = this.rawData[ofs + 3];
 				}
 
 				return this.imageData;
 			} else {
 				let buf = new Bufo(data.length);
-				let count = data.length / 4;
+				let count = this.rawData.length / 4;
 				for (let i = 0; i < count; i++) {
 					let ofs = i * 4;
 					buf.writeUInt8([
-						data[ofs + 2], data[ofs + 1], data[ofs], data[ofs + 3]
+						this.rawData[ofs + 2], this.rawData[ofs + 1], this.rawData[ofs], this.rawData[ofs + 3]
 					]);
 				}
 				buf.seek(0);
