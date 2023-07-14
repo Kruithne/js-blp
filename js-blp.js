@@ -125,7 +125,7 @@ const BLPFile = ((Bufo) => {
 					break;
 
 				case 3:
-					out = BLPFile._marshalBGRA(this.rawData);
+					out = this._marshalBGRA(this.rawData);
 					break;
 			}
 
@@ -347,7 +347,7 @@ const BLPFile = ((Bufo) => {
 		 * @returns {Bufo}
 		 * @private
 		 */
-		static _marshalBGRA(data) {
+		_marshalBGRA(data) {
 			if (this.imageData) {
 				let out = this.imageData.data;
 				let count = data.length / 4;
