@@ -361,7 +361,7 @@ const BLPFile = ((Bufo) => {
 
 				return this.imageData;
 			} else {
-				let buf = new Bufo(data.length);
+				let buf = new Bufo(this.rawData.length);
 				let count = this.rawData.length / 4;
 				for (let i = 0; i < count; i++) {
 					let ofs = i * 4;
