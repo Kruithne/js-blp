@@ -133,6 +133,9 @@ const BLPFile = ((Bufo) => {
 				this.imageContext.putImageData(this.imageData, 0, 0);
 				return this.imageContext;
 			}
+			else {
+				return out;
+			}
 		}
 
 		/**
